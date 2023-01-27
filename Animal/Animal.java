@@ -1,7 +1,7 @@
 package Animal;
 
-class Animal {
-    Animal(String s) {
-        System.out.println("Animal " + s);
+public class Animal {
+    public Animal() {
+        System.out.println("Making an Animal");
     }
 }
