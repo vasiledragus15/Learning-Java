@@ -12,17 +12,19 @@ public class TreeTest {
     public void go() {
         Book b1 = new Book("How Cats Work");
         Book b2 = new Book("Remix your Body");
-        Book b3 = new Book("Finding Emo"); 
+        Book b3 = new Book("Finding Emo");
+        Book b4 = new Book("A spasso con tua mamma"); 
         
-        Set<Book> tree = new TreeSet<>();
+        Set<Book> tree = new TreeSet<>((book1, book2) -> book1.getTitle().compareTo(book2.getTitle()));
         tree.add(b1);
         tree.add(b2);
         tree.add(b3);
+        tree.add(b4);
         System.out.println(tree);
     }
 }    
     
-class Book implements Comparable<Book>{
+class Book {
 
     private final String title;
 
@@ -38,8 +40,4 @@ class Book implements Comparable<Book>{
         return title;
     }
 
-    @Override
-    public int compareTo(Book other) {
-        return title.compareTo(other.title);
-    }
 }
