@@ -9,7 +9,8 @@ public class StreamTest {
      
         List<String> string = List.of("I", "am", "a", "list", "of", "Strings");
         Stream<String> stream = string.stream();
-        List<String> result2 = stream.limit(4).collect(Collectors.toList());
+        Stream<String> limit = stream.limit(4);
+        List<String> result2 = limit.collect(Collectors.toList());
         System.out.println("result = " + result2);
     }
     
